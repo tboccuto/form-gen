@@ -12,3 +12,9 @@ for field in "$@"; do
   class_code+="    ${field} = db.Column(db.String(50))\n"
 done
 echo -e "$class_code"
+
+ret=$(ls -t | head -n1)
+
+
+echo "from ${ret%.*} import *" | cat - app.py > temp && mv temp app.py
+ 
