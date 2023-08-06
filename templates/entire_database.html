@@ -11,67 +11,14 @@
     
 </head>
 <body>
-    <h2>Database</h2>
-    <table>
-        {% if rows %}
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Job</th>
-            </tr>
-            {% for row in rows %}
-                <tr>
-                    <td>
-                        <form method='post' action="{{ url_for('delete', the_id=row.id) }}">
-                            <label>{{ row.id }}</label>
-                            <input type="checkbox" name="remove">
-                            <br>
-                            <input type="submit" value="DELETE">
-                        </form>
-                    </td>
-
-                    <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='name') }}">
-                            <label>{{ row.name }}</label>
-                            <input type="text" name="name" placeholder="Edit Name">
-                            <br>
-                            <input type="submit" value="SUBMIT">
-                        </form>
-                    </td>
-                    <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='phone') }}">
-                            <label>{{ row.phone }}</label>
-                            <input type="text" name="phone" placeholder="Edit Phone Number">
-                            <br>
-                            <input type="submit" value="SUBMIT">
-                        </form>
-                    </td>
-                    
-                    <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='email') }}">
-                            <label>{{ row.email }}</label>
-                            <input type="text" name="email" placeholder="Edit Email">
-                            <br>
-                            <input type="submit" value="SUBMIT">
-                        </form>
-                    </td>
-
-                    <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='job') }}">
-                            <label>{{ row.job }}</label>
-                            <input type="text" name="job" placeholder="Edit Job">
-                            <br>
-                            <input type="submit" value="SUBMIT">
-                        </form>
-                    </td>
-                    
-                </tr>
-            {% endfor %}
+    {% for row in rows %}
+    {% for attr, value in row.__dict__.items() %}
+        {% if not attr.startswith('_sa_instance_state') %}
+            <p>{{ attr }}: {{ value }}</p>
         {% endif %}
-    </table>
-    <br>
-    <button><a href="{{ url_for('index') }}">Enter New User</a></button>
+    {% endfor %}
+{% endfor %}
+<br><button><a href="{{ url_for('index') }}">Enter New User</a></button>
 </body>
 </html>
+
