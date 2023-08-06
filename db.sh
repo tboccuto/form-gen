@@ -5,7 +5,12 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 table_name="Users"
-class_code="class ${table_name}(db.Model):\n"
+
+
+class_code="from flask_sqlalchemy import SQLAlchemy\n"
+class_code+="from app import *\n"
+class_code+="db = SQLAlchemy(app)\n"
+class_code+="class ${table_name}(db.Model):\n"
 class_code+="    __tablename__ = '${table_name}'\n"
 class_code+="    id = db.Column(db.Integer, primary_key=True)\n"
 for field in "$@"; do
