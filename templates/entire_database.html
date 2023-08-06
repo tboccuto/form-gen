@@ -11,14 +11,31 @@
     
 </head>
 <body>
-    {% for row in rows %}
-    {% for attr, value in row.__dict__.items() %}
-        {% if not attr.startswith('_sa_instance_state') %}
-            <p>{{ attr }}: {{ value }}</p>
-        {% endif %}
-    {% endfor %}
-{% endfor %}
-<br><button><a href="{{ url_for('index') }}">Enter New User</a></button>
+    <h2>Database</h2>
+    <table>
+        {% if rows %}
+        <tr>
+            {% for key in rows[0].__dict__.keys() if not key.startswith('_sa_instance_state') %}
+                <th>{{ key }}</th>
+            {% endfor %}
+            <th>ACTIONS</th>
+        </tr>
+        {% for row in rows %}
+            <tr>
+                {% for key, value in row.__dict__.items() if not key.startswith('_sa_instance_state') %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+                <td>
+                    <form method='post' action="{{ url_for('delete', the_id=row.id) }}">
+                        <input type="checkbox" name="remove">
+                        <input type="submit" value="DELETE">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+    <br>
+    <button><a href="{{ url_for('index') }}">Enter New User</a></button>
 </body>
 </html>
-
