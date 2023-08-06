@@ -19,4 +19,4 @@ for field in "$@"; do
 done
 echo -e "$class_code"
 ret=$(ls -t | head -n1)
-echo "from ${ret%.*} import *" | cat - routes.py > temp && mv temp routes.py
+echo "import ${ret%.*}" | cat - routes.py > temp && mv temp routes.py

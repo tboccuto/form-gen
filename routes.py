@@ -1,5 +1,8 @@
-from flask import render_template, request, redirect, url_for
 import forms
+from forms import *
+from forms import *
+from flask import render_template, request, redirect, url_for
+#import forms
 
 def index():
     form = forms.LoginForm()
