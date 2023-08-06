@@ -9,21 +9,16 @@
 </head>
 <body>
 	<div class="container">
-
     <header>
       <h1>Conference</h1>
     </header>
-
     <form method="POST" action="{{ url_for('submitted') }}">
-      {{ form.csrf_token }}
-      {{ form.name.label }}
-      {{ form.name }}
-      {{ form.phone.label }}
-      {{ form.phone }}
-      {{ form.email.label }}
-      {{ form.email }}
-      {{ form.job.label }}
-      {{ form.job }}
+      {% for field in form %}
+        {% if field.name != 'csrf_token' %}
+          {{ field.label }}
+          {{ field }}
+        {% endif %}
+      {% endfor %}
       <button type="submit">Register</button>
     </form>
     <button><a href="{{ url_for('view_database') }}">View Database</a></button>

@@ -5,8 +5,6 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 table_name="Users"
-
-
 class_code="from flask_sqlalchemy import SQLAlchemy\n"
 class_code+="from app import *\n"
 class_code+="db = SQLAlchemy(app)\n"
@@ -17,9 +15,5 @@ for field in "$@"; do
   class_code+="    ${field} = db.Column(db.String(50))\n"
 done
 echo -e "$class_code"
-
 ret=$(ls -t | head -n1)
-
-
 echo "from ${ret%.*} import *" | cat - app.py > temp && mv temp app.py
- 
