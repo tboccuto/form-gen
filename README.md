@@ -168,6 +168,7 @@ Finally we set up our user loginform, this metadata are columns in the database 
 ## Roadmap
 
 - [ ] REFACTOR
+- [ ] SCALE, should be able to create mutiple forms in one application, following MVC and rails.
 - [ ] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`.
 - [ ] Add User authentications.
 - [ ] After types to scaffolds, we can then begin to explore user authentication.
