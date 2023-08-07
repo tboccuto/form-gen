@@ -177,9 +177,7 @@ Finally we set up our user loginform, this metadata are columns in the database 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`
-  
-
+- [ ] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`
 - [ ] Add User authentications
 - [ ] After types to scaffolds, we can then begin to explore user authentication
 - [ ] Add Skeleton code for outlook emailing
