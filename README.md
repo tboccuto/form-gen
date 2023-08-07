@@ -177,12 +177,13 @@ Finally we set up our user loginform, this metadata are columns in the database 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`
-- [ ] Add User authentications
-- [ ] After types to scaffolds, we can then begin to explore user authentication
-- [ ] Add Skeleton code for outlook emailing
-- [ ] Setup github CI
+- [ ] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`.
+- [ ] Add User authentications.
+- [ ] After types to scaffolds, we can then begin to explore user authentication.
+- [ ] Add Skeleton code for outlook emailing.
+- [ ] Setup github CI.
 - [ ] Integrate serverless framework with AWS with least privleges, attatch policy to repo under `.aws/` if you got it!
+- [ ] More than likely, some refactoring, prototpye was spun up in a day.
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
