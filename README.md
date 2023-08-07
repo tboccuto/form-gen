@@ -9,8 +9,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -25,8 +23,6 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -77,11 +73,8 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
 
 Kick start your project using `Form-gen` feature which generates a model and a view using scaffolding. In short, 
 A scaffold is a set of automatically generated files which forms the basic structure for a CRUD application. And for the current state
@@ -95,10 +88,7 @@ Here's why:
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -177,13 +167,13 @@ Finally we set up our user loginform, this metadata are columns in the database 
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] REFACTOR
 - [ ] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`.
 - [ ] Add User authentications.
 - [ ] After types to scaffolds, we can then begin to explore user authentication.
 - [ ] Add Skeleton code for outlook emailing.
 - [ ] Setup github CI.
 - [ ] Integrate serverless framework with AWS with least privleges, attatch policy to repo under `.aws/` if you got it!
-- [ ] More than likely, some refactoring, prototpye was spun up in a day.
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
