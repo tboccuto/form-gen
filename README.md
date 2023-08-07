@@ -1,4 +1,4 @@
-### Readme coming soon ...
+
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -31,23 +31,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Flask Scaffolding with Bash ❤️</h3>
+   <img src="images/flask.png" alt="Logo" width="80" height="80">
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo Coming soon!</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/tboccuto/form-gen/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/tboccuto/form-gen/pulls">Request Feature</a>
   </p>
 </div>
 
@@ -84,18 +82,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Kick start your project using `Form-gen` feature which generates a model and a view using scaffolding. In short, 
+A scaffold is a set of automatically generated files which forms the basic structure for a CRUD application. And for the current state
+of this repo, `Form-gen` can automatically generate a template, and view for your database.
 
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
+* Your time should be focused on setting up authentication, styling, and releasing other features. Using `Form-gen` gives you the option to avoid figuring out how to write the templates for reading in form fields. 
+* You shouldn't be doing the same tasks over and over. `Form-gen` gives you the functionality to create a form with database in three commands!
 * You should implement DRY principles to the rest of your life :smile:
 
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
-Use the `BLANK_README.md` to get started.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,77 +103,89 @@ Use the `BLANK_README.md` to get started.
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+- Flask
+- Bash
+- SQLlite
+- Docker
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+Here is the `tree`
+```sh
+├── app.py
+├── docker.sh
+├── info.db
+├── Dockerfile
+├── forms.sh
+├── index.sh
+├── info.db
+├── forms.py
+├── forms.sh
+├── info.db
+├── requirements.txt
+├── routes.py
+├── static
+│   └── css
+│       ├── databaseStyles.css
+│       └── style.css
+└── templates
+    ├── entire_database.html
+    ├── index.html
+
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Installation
+<br>
+- Soon there will be a pip library for this but in the mean time we can just use the following comands
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+```sh 
+git checkout main
+```
+- Then run ```pip install -r requirements.txt```
+## Usage
+<br>
+First set up the form name and title 
 
-### Prerequisites
+./index.sh takes two bash arguments. arg1 for the title and arg2 for the header of the form.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+./index.sh arg0 arg1
+```
+Next we set up the User model
 
-### Installation
+./db.sh generates the User model with `N` bash arguments. Then code is written to app.py
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+```sh
+./db.sh ar0, arg1, arg2 ...
+./db.sh  name phone email job alias  #example
+```
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+Finally we set up our user loginform, this metadata are columns in the database view
 
+```sh
+./forms.sha ar0, arg1, arg2 ... 
+./forms.sh phone email job alias  #example, and login fields can be different than db,
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [] Add types to scaffolds like eg `./db.sh name:string email:email job:string alias:string`
+  
+
+- [ ] Add User authentications
+- [ ] After types to scaffolds, we can then begin to explore user authentication
+- [ ] Add Skeleton code for outlook emailing
+- [ ] Setup github CI
+- [ ] Integrate serverless framework with AWS with least privleges, attatch policy to repo under `.aws/` if you got it!
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
@@ -211,10 +222,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
+- github@tboccuto
+- boccutothomas@outlook.com
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [Form-gen](https://github.com/tboccuto/form-gen/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -224,6 +236,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+This repo was inspired by the forked repo [here](https://github.com/tboccuto/Simple-Flask-Form)
 
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
