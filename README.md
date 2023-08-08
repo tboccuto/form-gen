@@ -128,9 +128,11 @@ Here is the `tree`
 <!-- GETTING STARTED -->
 ## Installation
 <br>
-```sh
 
+```sh
+git glone git@github.com:tboccuto/form-gen.git
 ```
+
 ```sh 
 git checkout main
 ```
@@ -143,6 +145,7 @@ Set the environment variable
 export FLASK_APP=app.py 
 ```
 Next set up the form name and title 
+## This is temporary, its going to be the same as `rails g books title:string paradigm`
 
 ./index.sh takes two bash arguments. arg1 for the title and arg2 for the header of the form.
 
@@ -159,9 +162,9 @@ Next we set up the User model
 ```
 
 Finally we set up our user loginform, this metadata are columns in the database view
-
+or you can do `flask g arg0, arg1, arg2 ... `
 ```sh
-./forms.sha ar0, arg1, arg2 ... 
+./forms.sh arg0, arg1, arg2 ... 
 ./forms.sh phone email job alias  #example, and login fields can be different than db,
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
