@@ -128,15 +128,21 @@ Here is the `tree`
 <!-- GETTING STARTED -->
 ## Installation
 <br>
-- Soon there will be a pip library for this but in the mean time we can just use the following comands
+```sh
 
+```
 ```sh 
 git checkout main
 ```
 - Then run ```pip install -r requirements.txt```
 ## Usage
 <br>
-First set up the form name and title 
+Set the environment variable 
+
+```sh
+export FLASK_APP=app.py 
+```
+Next set up the form name and title 
 
 ./index.sh takes two bash arguments. arg1 for the title and arg2 for the header of the form.
 
