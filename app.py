@@ -2,10 +2,11 @@ import routes
 from flask import Flask
 import os 
 from flask_sqlalchemy import SQLAlchemy 
+import click
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A secret'
-
 app.add_url_rule('/', view_func=routes.index)
 app.add_url_rule('/submitted', methods=['GET', 'POST'], view_func=routes.submitted)
 app.add_url_rule('/database', view_func=routes.view_database)
@@ -13,6 +14,13 @@ app.add_url_rule('/modify<the_id>/<modified_category>', methods=['GET', 'POST'],
 app.add_url_rule('/delete<the_id>', methods=['GET', 'POST'], view_func=routes.delete)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # no warning messages
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///info.db' # for using the sqlite database
+
+## TODO Implement a way differentiate between g for form and g for model
+@app.cli.command('g')
+@click.argument('args', nargs=-1)
+def make_form(args):
+    os.system('./forms.sh ' + ' '.join(args))  
+
 db = SQLAlchemy(app)
 class User(db.Model):
     __tablename__ = 'Users'
@@ -22,7 +30,7 @@ class User(db.Model):
     email = db.Column(db.String(50))
     job = db.Column(db.String(50))
     alias = db.Column(db.String(50))
-
+    test = db.Column(db.String(50))
 def insert_data(**kwargs):
     db.session.add(User(**kwargs))
     db.session.commit()
