@@ -1,10 +1,10 @@
 import routes
 from flask import Flask
 import os 
-from flask_sqlalchemy import SQLAlchemy 
+#from flask_sqlalchemy import SQLAlchemy 
 import click
-
-
+from model import *
+from flask_sqlalchemy import SQLAlchemy 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A secret'
 app.add_url_rule('/', view_func=routes.index)
@@ -14,13 +14,14 @@ app.add_url_rule('/modify<the_id>/<modified_category>', methods=['GET', 'POST'],
 app.add_url_rule('/delete<the_id>', methods=['GET', 'POST'], view_func=routes.delete)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # no warning messages
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///info.db' # for using the sqlite database
-
+db = SQLAlchemy(app)
 ## TODO Implement a way differentiate between g for form and g for model
 @app.cli.command('g')
 @click.argument('args', nargs=-1)
 def make_form(args):
-    os.system('./forms.sh ' + ' '.join(args))  
+  os.system('./forms.sh ' + ' '.join(args))  
 
+"""
 db = SQLAlchemy(app)
 class User(db.Model):
     __tablename__ = 'Users'
@@ -53,5 +54,9 @@ db_is_new = db.create_all() if not os.path.exists('info.db') else None
 if __name__ == '__main__':
     #app.run(host=5000,debug=True)
     app.run()
+"""
+db_is_new = db.create_all() if not os.path.exists('info.db') else None
+if __name__ == '__main__':
+  app.run()
 
 
