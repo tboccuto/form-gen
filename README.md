@@ -145,7 +145,7 @@ Set the environment variable
 export FLASK_APP=app.py 
 ```
 Next set up the form name and title 
-## This is temporary, its going to be the same as `rails g books title:string paradigm`
+### This is temporary, its going to be the same as `rails g books title:string` paradigm
 
 ./index.sh takes two bash arguments. arg1 for the title and arg2 for the header of the form.
 
