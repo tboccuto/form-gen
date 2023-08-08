@@ -18,7 +18,4 @@ for field in "$@"; do
   class_code+="    ${field} = StringField('$field:', id='$field')\n"
 done
 echo -e "$class_code"
-#ret=$(ls -t | head -n1)
-#echo "import ${ret%.*}" | cat - routes.py > temp && mv temp routes.py
-#cat routes.py > temp && mv temp routes.py
 echo -e "$class_code">> forms.py
