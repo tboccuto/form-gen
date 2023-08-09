@@ -154,11 +154,11 @@ Next set up the form name and title
 ```
 Next we set up the User model
 
-./db.sh generates the User model with `N` bash arguments. Then code is written to app.py
+./db.sh generates the model with `N` attributes for that class model. Then the code is written to model.py with the respective db functions.
 
 ```sh
-./db.sh ar0, arg1, arg2 ...
-./db.sh  name phone email job alias  #example
+./db.sh table_name, attribute1, attribute2, attribute2 ...
+./db.sh  user phone email job alias  #example
 ```
 
 Finally we set up our user loginform, this metadata are columns in the database view
