@@ -1,3 +1,9 @@
 .db
 env/
+forms.py
+model.py
+.cfg
+lib/
+share/
+lib64/
 
