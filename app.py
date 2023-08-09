@@ -1,4 +1,3 @@
-
 import routes
 from flask import Flask
 import os 
@@ -26,7 +25,7 @@ def make_title(args):
 def make_model(args):
   os.system('./db.sh ' + ' '.join(args))  
 
-@app.cli.command('forms')
+@app.cli.command('form')
 @click.argument('args', nargs=-1)
 def make_form(args):
   os.system('./forms.sh ' + ' '.join(args))  

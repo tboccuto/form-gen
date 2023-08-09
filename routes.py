@@ -1,4 +1,7 @@
+
+
 from flask import render_template, request, redirect, url_for
+
 
 def index():
     form = forms.LoginForm()
@@ -30,3 +33,5 @@ def submitted():
     if request.method == 'POST':
         insert_data(**{k: v for k,v in request.form.items() if k !='csrf_token'})
     return render_template('submitted.html')
+
+

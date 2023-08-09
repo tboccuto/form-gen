@@ -6,4 +6,5 @@ model.py
 lib/
 share/
 lib64/
+bin/
 
