@@ -145,7 +145,14 @@ Set the environment variable
 export FLASK_APP=app.py 
 ```
 Next set up the form name and title 
-## This is temporary, its going to be the same as `rails g books title:string paradigm`
+#### This is temporary, its going to be the same as `rails g books title:string paradigm`
+### Now we have a cli implemented!
+Here is a quick dirty example to set up a form, `TODO there are bugs in the loop for args`
+```sh
+>>> flask title test test
+>>> flask form phone email name age major
+>>> flask model phone email name age major
+```
 
 ./index.sh takes two bash arguments. arg1 for the title and arg2 for the header of the form.
 
@@ -157,6 +164,7 @@ Next we set up the User model
 ./db.sh generates the model with `N` attributes for that class model. Then the code is written to model.py with the respective db functions.
 
 ```sh
+
 ./db.sh table_name, attribute1, attribute2, attribute2 ...
 ./db.sh  user phone email job alias  #example
 ```
