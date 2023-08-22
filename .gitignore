@@ -1,3 +1,11 @@
 .db
 env/
+forms.py
+model.py
+.cfg
+lib/
+share/
+lib64/
+bin/
+ __pycache__/
 
