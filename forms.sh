@@ -1,5 +1,6 @@
 #!/bin/bash
 #Example usage ./forms.sh name phone email job > user_class.py gernerates the model for form.
+
 if [ $# -lt 1 ]; then
   echo "Usage: $0 field1 [field2 field3 ...]"
   exit 1
@@ -18,7 +19,5 @@ for field in "$@"; do
   class_code+="    ${field} = StringField('$field:', id='$field')\n"
 done
 echo -e "$class_code"
-#ret=$(ls -t | head -n1)
-#echo "import ${ret%.*}" | cat - routes.py > temp && mv temp routes.py
-#cat routes.py > temp && mv temp routes.py
-echo -e "$class_code">> forms.py
+echo -e "$class_code" >> forms.py
+sed -i '1i import forms' routes.py
